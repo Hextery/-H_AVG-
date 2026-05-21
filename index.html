@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>*** FRIHET FRÅN ÖH ***</title>
+    <style>
+        body {
+            background-color: #0000ff;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Unofficial_Flag_of_Jamtland.svg/1280px-Unofficial_Flag_of_Jamtland.svg.png'); 
+            color: #ffff00; 
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            text-align: center;
+            /*cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym1.cur'), auto;*/
+        }
+
+        #main-table {
+            background-color: #c0c0c0; /* Classic Windows 95 Grey */
+            border: 5px outset #ffffff;
+            width: 80%;
+            margin: 20px auto;
+            color: #000;
+            padding: 20px;
+        }
+
+        .header-text {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ff0000;
+            text-shadow: 2px 2px #000;
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        #countdown {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 4em;
+            background: #000;
+            color: #00ff00; /* Matrix/Digital green */
+            border: 4px inset #808080;
+            display: inline-block;
+            padding: 20px;
+            margin: 20px 0;
+            width: 80%;
+        }
+
+        .jamtland-decor {
+            width: 100px;
+            vertical-align: middle;
+        }
+
+        .visitor-counter {
+            background: #000;
+            color: #fff;
+            font-family: monospace;
+            padding: 5px;
+            border: 2px solid #fff;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .marquee-area {
+            background: yellow;
+            color: red;
+            font-weight: bold;
+            font-size: 1.5em;
+            border-y: 3px solid black;
+        }
+
+        .btn-retro {
+            background: #c0c0c0;
+            border: 3px outset #fff;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+
+        .btn-retro:active {
+            border: 3px inset #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Decoration -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Unofficial_Flag_of_Jamtland.svg/1280px-Unofficial_Flag_of_Jamtland.svg.png" class="jamtland-decor">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Unofficial_Flag_of_Jamtland.svg/1280px-Unofficial_Flag_of_Jamtland.svg.png" class="jamtland-decor">
+
+    <div id="main-table">
+        <div class="header-text">
+            <marquee behavior="alternate" width="80%">
+                Snart är vi fria från ÖHs inkompetens!
+            </marquee>
+        </div>
+
+        <br>
+        <img src="https://img.icons8.com/color/96/cow.png" alt="Cow"> 
+        <span style="font-size: 1.2em; font-weight: bold;">JAMTAMOT ÖVERLEV ÖHs TERROR!</span>
+        <img src="https://img.icons8.com/color/96/cow.png" alt="Cow">
+        <br>
+
+        <div id="countdown">00:00:00:00</div>
+        
+        <p style="font-size: 1.5em; color: blue;">
+            <b>Nedräkning till befrielsen: 18 September, kl 18:00</b>
+        </p>
+
+        <center>
+            <a href="#" class="btn-retro" onclick="alert('ÖH SKA KLIVA AV!!!!')">Klicka här för mer info!</a>
+        </center>
+
+        <br><br>
+        <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/598784541_26281548314766523_6510455206387491493_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=24ef35&_nc_ohc=CcgJV8e_D3gQ7kNvwGR82Dk&_nc_oc=AdrIfXvJVK65FRsWu9ULYAxOalrEPq2IAIxRpf1jn41as00wwUV8copKdUwqiyPiorg&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_gid=BVWJpzU-c3bfU5L3LX0e-g&_nc_ss=7b2a8&oh=00_Af4TYtAKUvC6MD2ryLHO-FUBfLmzasnbOONQvEVGe4UdbA&oe=6A15533A" width="150">
+    </div>
+
+    <div class="marquee-area">
+        <marquee>!!! VARNING !!! ÖH ÄR INKOMPETENT !!! STÖT UT JÄVLEN NU !!! JAMTAMOT TILL VAPEN !!!</marquee>
+    </div>
+
+    <div class="visitor-counter">
+        Besökare sedan 1996: <span id="count">00042069</span>
+    </div>
+
+    <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Unofficial_Flag_of_Jamtland.svg/1280px-Unofficial_Flag_of_Jamtland.svg.png" class="jamtland-decor">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Unofficial_Flag_of_Jamtland.svg/1280px-Unofficial_Flag_of_Jamtland.svg.png" class="jamtland-decor">
+
+    <script>
+        function updateCountdown() {
+            // Set target date to Sept 18th, 18:00:00 of current year
+            const currentYear = new Date().getFullYear();
+            const targetDate = new Date(`September 18, ${currentYear} 18:00:00`).getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "VI ÄR FRIA!!!";
+                document.getElementById("countdown").style.color = "yellow";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Formatting to keep leading zeros
+            const d = days.toString().padStart(2, '0');
+            const h = hours.toString().padStart(2, '0');
+            const m = minutes.toString().padStart(2, '0');
+            const s = seconds.toString().padStart(2, '0');
+
+            document.getElementById("countdown").innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+        }
+
+        // Update every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Randomly increase visitor counter to feel "alive"
+        setInterval(() => {
+            let current = parseInt(document.getElementById('count').innerText);
+            document.getElementById('count').innerText = (current + Math.floor(Math.random() * 3)).toString().padStart(8, '0');
+        }, 5000);
+    </script>
+</body>
+</html>
